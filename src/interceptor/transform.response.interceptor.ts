@@ -27,6 +27,12 @@ export class ResponseTransformInterceptor<T>
     return next.handle().pipe(
       map((res) => {
         this.logger.log('res', res instanceof Object);
+        this.logger.log('res', res);
+        if (!res) {
+          return {
+            result: true,
+          };
+        }
         const { data, pagination, result, ...rest } = res || {};
         if (res?.data instanceof Array) {
           return {

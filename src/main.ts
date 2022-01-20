@@ -1,7 +1,10 @@
 import { BadRequestException, Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { AllExceptionsFilter } from './interceptor/all-exception.filters';
+import {
+  AllExceptionsFilter,
+  ValidationExceptionFilter,
+} from './interceptor/all-exception.filters';
 import { ResponseTransformInterceptor } from './interceptor/transform.response.interceptor';
 
 async function bootstrap() {
@@ -23,6 +26,7 @@ async function bootstrap() {
   );
   app.useGlobalInterceptors(new ResponseTransformInterceptor());
   app.useGlobalFilters(new AllExceptionsFilter());
+  app.useGlobalFilters(new ValidationExceptionFilter());
   await app.listen(3000);
 }
 bootstrap();

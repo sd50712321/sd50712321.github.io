@@ -1,9 +1,20 @@
 import { Exclude } from 'class-transformer';
-// import { User } from 'src/auth/user.entity';
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from 'src/users/users.entity';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity()
-export class Camp {
+export class Camp extends BaseEntity {
+  constructor(partial: Partial<Camp>) {
+    super();
+    Object.assign(this, partial);
+  }
   @PrimaryGeneratedColumn('increment', {
     comment: '캠핑장 인덱스',
   })
@@ -53,7 +64,7 @@ export class Camp {
   })
   last_update_dt: Date;
 
-  // @ManyToOne((_type) => User, (user) => user.tasks, { eager: false })
-  // @Exclude({ toPlainOnly: true })
-  // user: User;
+  @ManyToOne((_type) => User, (user) => user.camps)
+  @Exclude({ toPlainOnly: true })
+  user: User;
 }

@@ -5,6 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CampsModule } from './camps/camps.module';
 import { configValidationSchema } from './config.schema';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -25,7 +26,7 @@ import { configValidationSchema } from './config.schema';
       inject: [ConfigService],
       useFactory: async (config: ConfigService) => ({
         type: 'mysql',
-        synchronize: false,
+        synchronize: true,
         autoLoadEntities: true,
         host: config.get('DB_HOST'),
         port: config.get('DB_PORT'),
@@ -40,6 +41,7 @@ import { configValidationSchema } from './config.schema';
       validationSchema: configValidationSchema,
     }),
     CampsModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

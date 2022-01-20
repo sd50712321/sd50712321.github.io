@@ -8,14 +8,6 @@ export class CampsRepository extends Repository<Camp> {
   private logger = new Logger('CampsRepository', { timestamp: true });
 
   async createCamp(createCampDto: CampRegistDto): Promise<Camp> {
-    // const {
-    //   zip_code,
-    //   jibun_addr,
-    //   dets_addr,
-    //   intro,
-    //   mobile,
-    // } = createCampDto;
-
     const camp = this.create({
       ...createCampDto,
     });
@@ -25,43 +17,19 @@ export class CampsRepository extends Repository<Camp> {
     return camp;
   }
 
-  // async deleteCampById(id: string): Promise<DeleteResult> {
-  //   const result = await this.delete(id);
-  //   return result;
-  // }
+  async getCamp(camp: Camp): Promise<Camp[]> {
+    const { camp_idx, camp_name, first_create_dt, last_update_dt } = camp;
 
-  // async updateCampStatus(
-  //   id: string,
-  //   status: CampStatus,
-  //   user: User,
-  // ): Promise<Camp> {
-  //   const camp = await this.findOne({ where: { id, user } });
-  //   camp.status = status;
-  //   await this.save(camp);
-  //   return camp;
-  // }
+    const query = this.createQueryBuilder('camp');
 
-  // async getCamps(filterDto: GetCampsDto, user: User): Promise<Camp[]> {
-  //   const { status, search } = filterDto;
-  //   const query = this.createQueryBuilder('camp');
-  //   query.where({ user });
+    if (camp_idx) {
+      query.andWhere('camp.camp_idx = :camp_idx', { camp_idx });
+    }
+    if (camp_name) {
+      query.andWhere("camp.camp_name LIKE '%:camp_name%'", { camp_name });
+    }
 
-  //   if (status) {
-  //     query.andWhere('camp.status = :status', { status });
-  //   }
-
-  //   if (search) {
-  //     query.andWhere(
-  //       '(LOWER(camp.title) LIKE LOWER(:search) OR LOWER(camp.description) LIKE LOWER(:search))',
-  //       { search: `%${search}%` },
-  //     );
-  //   }
-  //   try {
-  //     const camps = await query.getMany();
-  //     return camps;
-  //   } catch (err) {
-  //     this.logger.error(err);
-  //     throw new InternalServerErrorException();
-  //   }
-  // }
+    const result = await query.getMany();
+    return result;
+  }
 }

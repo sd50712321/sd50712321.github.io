@@ -5,6 +5,7 @@ import {
   HttpException,
   HttpStatus,
   Logger,
+  BadRequestException,
 } from '@nestjs/common';
 // import { QueryFailedError } from 'typeorm';
 
@@ -50,28 +51,30 @@ import {
 //   }
 // }
 
-// @Catch(BadRequestException)
-// export class ValidationExceptionFilter
-//   implements ExceptionFilter<BadRequestException>
-// {
-//   private logger = new Logger('ValidationExceptionFilter', { timestamp: true });
-//   public catch(exception, host: ArgumentsHost) {
-//     const ctx = host.switchToHttp();
-//     const response = ctx.getResponse();
-//     const status =
-//       exception instanceof HttpException
-//         ? exception.getStatus()
-//         : HttpStatus.UNPROCESSABLE_ENTITY;
-//     this.logger.log('exception in validation', exception);
+@Catch(BadRequestException)
+export class ValidationExceptionFilter
+  implements ExceptionFilter<BadRequestException>
+{
+  private logger = new Logger('ValidationExceptionFilter', { timestamp: true });
+  public catch(exception, host: ArgumentsHost) {
+    const ctx = host.switchToHttp();
+    const response = ctx.getResponse();
+    const status =
+      exception instanceof BadRequestException
+        ? exception.getStatus()
+        : HttpStatus.UNPROCESSABLE_ENTITY;
 
-//     response.status(status).json({
-//       result: false,
-//       statusCode: status,
-//       error: `Unprocessable Entity`,
-//       message: exception.response.message.map((data) => data.constraints),
-//     });
-//   }
-// }
+    response.status(status).json({
+      result: false,
+      statusCode: status,
+      error: exception.response.error,
+      message:
+        exception?.response?.message instanceof Array
+          ? exception?.response?.message.map((data) => data.constraints)
+          : exception?.response?.message,
+    });
+  }
+}
 
 @Catch()
 export class AllExceptionsFilter implements ExceptionFilter {
