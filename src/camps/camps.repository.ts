@@ -26,7 +26,9 @@ export class CampsRepository extends Repository<Camp> {
       query.andWhere('camp.camp_idx = :camp_idx', { camp_idx });
     }
     if (camp_name) {
-      query.andWhere("camp.camp_name LIKE '%:camp_name%'", { camp_name });
+      query.andWhere("camp.camp_name LIKE ':camp_name'", {
+        camp_name: `%${camp_name}%`,
+      });
     }
 
     const result = await query.getMany();
