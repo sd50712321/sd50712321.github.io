@@ -133,8 +133,8 @@
               <p class="quote">연동팀</p>
               <ul>
                 <li>
-                  lms 시스템 개편 - 엔드포인트 통폐합 및 슬로우쿼리 모니터링 및
-                  수정
+                  lms 시스템 개편 - 엔드포인트 통폐합, 쿼리분석 협력사 db cpu
+                  사용률 80% -> 40% 단축
                 </li>
                 <li>페덱스 해외 배송 시스템 연동 기능 개발</li>
                 <li>eks 서비스에서 필요한 각종 설정 및 배포 관련 수정</li>
@@ -155,7 +155,7 @@
                 페덱스에서 제공하는 api와 물류시스템을 연동하여, 해외배송에
                 필요한 문서 혹은 양식 들을 사용자가 엑셀로 수기업로드 하거나
                 페덱스 콘솔에 직접 접근하지 않더라도, <br />
-                웹서비스 안에서 원클릭으로 모두 처리해주는 시스템을
+                관리자페이지 안에서 원클릭으로 모두 처리해주는 시스템을
                 개발하였습니다.
               </li>
               <li>
@@ -191,272 +191,6 @@
               <ul>
                 <!-- <li>교육관련 멘토(API작성 및 쿼리문 등)</li> -->
                 <li>여러 프로젝트의 서버관리 및 백엔드 개발에 참여</li>
-                <li>관리자 프론트엔드 개발</li>
-              </ul>
-            </div>
-          </div>
-          <div class="row clearfix layout layout-top-middle">
-            <div class="col-xs-12 col-print-12 details">
-              <h4>팀에브리웨어 프로젝트</h4>
-            </div>
-            <div class="col-xs-12 col-print-12">
-              <p class="quote">학원관리앱</p>
-              <ul>
-                <li>
-                  데이터베이스 설계, api 서버 구축 및 admin 웹 프론트 작업 작업
-                </li>
-                <li>
-                  한글에서 제공하는 api를 이용하여, explorer 환경에서 웹으로
-                  문제 답안 양식을 문제집에 맞게 동적으로 만드는 기능 작성
-                </li>
-              </ul>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-print-12">
-                <p>프로젝트 설명</p>
-                <ul>
-                  <li>
-                    슈퍼관리자(웹) - 학원관리자(웹,앱) - 사용자(안드로이드)
-                  </li>
-                  <li>
-                    슈퍼관리자는 학원관리자 회원가입을 받아 확인하고, 이벤트 및
-                    공지사항 등을 푸시알림하고, 학원 별로 쓰이는 양식, 문제집을
-                    직접 제공합니다
-                  </li>
-                  <li>
-                    학원 관리자는 원생을 등록시키고, 슈퍼관리자에서 내려주는
-                    교재나 문서 양식을 QR코드 형태로 학생들에게 제공합니다
-                  </li>
-                  <li>
-                    문제집을 푼 후 문제집 답안 양식을 카메라로 찍어 제출할 수
-                    있습니다
-                  </li>
-                  <li>
-                    입력된 정답을 통해 채점을 하고 지역별, 학교별 등수를 통계로
-                    확인 할 수 있습니다.
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xs-12 col-print-12">
-              <p class="quote">심리상담앱</p>
-              <ul>
-                <li>
-                  데이터베이스 설계, api 서버 구축 및 admin 웹 프론트 작업
-                </li>
-                <li>
-                  카카오톡 브라우저에서 ios 유니버셜 링크 기능이 제대로 작동하지
-                  않는 것을 nginx proxy에서 mime type 수정 등을 통하여 해결
-                </li>
-                <li>
-                  Docker 컨테이너의 로그가 쌓여 서버가 죽는 일이 발생, 컨테이너
-                  별로 로그파일 개수 및 파일당 입력되는 로그 사이즈 최적화
-                </li>
-              </ul>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-print-12">
-                <p>프로젝트 설명</p>
-                <ul>
-                  <li>관리자(웹) - 사용자(ios)</li>
-                  <li>
-                    로그인 후 본인의 심리상태 확인을 위한 10~20가지의 설문을
-                    받습니다
-                  </li>
-                  <li>
-                    설문의 답변마다 4가지 색깔과 점수로 값을 환산할 수 있고,
-                    어떤 색깔 어떤 점수가 더 높냐에 따라 메인에 뜨는 게시물이
-                    다릅니다
-                  </li>
-                  <li>
-                    게시물 들은 앱과 제휴한 정신과 의사 혹은 심리상담가가 올린
-                    글입니다
-                  </li>
-                  <li>내 주변에 있는 가장 가까운 심리상담소를 추천해줍니다</li>
-                  <li>
-                    관리자에서 이벤트나, 배너, 제휴한 업체의 글을 등록합니다
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xs-12 col-print-12">
-              <p class="quote">케이크앱</p>
-              <ul>
-                <li>데이터베이스 설계, api 서버 구축</li>
-                <li>
-                  chromium(Puppeteer)을 이용하여 인스타그램 이미지 크롤링 기능
-                  구현
-                </li>
-                <li>
-                  chromium(Puppeteer) 이용하여 주문서 base64이미지 만드는 시간을
-                  10초에서 1초로 단축
-                </li>
-                <li>
-                  firbase의 real time database를 이용하여 React 기반의 실시간
-                  채팅 기능을 구현
-                </li>
-                <li>알리고 등을 활용하여 문자 자동알림, 알림톡 등을 구현</li>
-              </ul>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-print-12">
-                <p>프로젝트 설명</p>
-                <ul>
-                  <li>관리자(웹) - 사용자(react)</li>
-                  <li>서울에 있는 모든 케이크가게를 찾아볼 수 있습니다</li>
-                  <li>
-                    svg로 서울 지도가 띄워져있고, 클릭하면 특정 구나 동에 있는
-                    케이크 가게 리스트 볼 수 있습니다
-                  </li>
-                  <li>
-                    클릭한 케이크 가게가 제휴한 케이크가게이면 예약 주문을 할 수
-                    있습니다
-                  </li>
-                  <li>
-                    예약완료시 주문서를 스크린샷 형태로 제공 받으며, 가게 주인과
-                    채팅할 수 있습니다
-                  </li>
-                  <li>
-                    관리자에서는 케이크 가게를 등록하고, 케이크 가게의 메뉴판을
-                    작성합니다
-                  </li>
-                  <li>케이크 가게 인스타에 올라와 있는 사진 들을 등록합니다</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xs-12 col-print-12">
-              <p class="quote">온누리스토어 리뉴얼</p>
-              <ul>
-                <li>관리자 페이지 웹 프론트 작업</li>
-                <li>
-                  온누리 측 시스템 매니저의 gitlab ci-cd 구현 부분을 참고하여
-                  사내 ci-cd를 구축
-                </li>
-                <li>React로 된 프론트페이지 기능 구현 및 서포트</li>
-              </ul>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-print-12">
-                <p>프로젝트 설명</p>
-                <ul>
-                  <li>
-                    기존 솔루션업체를 통한 페이지를 자사의 페이지로 리뉴얼
-                    합니다
-                  </li>
-                  <li>위메프의 관리자 페이지를 기준으로 리뉴얼 하였습니다</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xs-12 col-print-12">
-              <p class="quote">캠핑장 플래폼</p>
-              <ul>
-                <li>
-                  데이터베이스 설계, api 서버 구축 및 admin 웹 프론트 작업
-                </li>
-                <li>gitlab ci-cd를 구축</li>
-                <li>사용자 세션 처리를 redis 환경으로 구축</li>
-                <li>결제, 커뮤니티, 예약, 정산 등의 기능 구축</li>
-              </ul>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-print-12">
-                <p>프로젝트 설명</p>
-                <ul>
-                  <li>관리자(웹) - 사용자(react)</li>
-                  <li>캠핑장 예약, 커뮤니티, 결제 등이 모두 포함되었습니다</li>
-                  <li>
-                    사용자는 위치 혹은 키워드로 캠핑장 들을 검색할 수 있고, 특정
-                    카테고리로 묶인 캠핑장 들을 확인하고 조회할 수 있습니다
-                  </li>
-                  <li>커뮤니티에 글을 올리고, 리뷰 등을 작성할 수 있습니다</li>
-                  <li>
-                    관리자는 사업자등록증 등 캠핑장을 증명할 수 있는 문서를
-                    제공하고 슈퍼관리자는 이를 승인합니다
-                  </li>
-                  <li>
-                    관리자는 캠핑장을 등록하고, 캠핑장 사이트를 아주 세세하게
-                    등록합니다. ex) 예약가능시간, 주중 주말 가격, 성수기
-                    비성수기 가격 등등..
-                  </li>
-                  <li>
-                    관리자는 캘린더로 언제부터 언제까지 예약인지 현황을 살펴볼
-                    수 있고, 월별로 정산 현황을 확인 할 수 있습니다
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xs-12 col-print-12">
-              <p class="quote">라이브 홈쇼핑 웹</p>
-              <ul>
-                <li>
-                  데이터베이스 설계, api 서버 구축 및 admin 웹 프론트 작업
-                </li>
-                <li>Socket.io 이용하여 채팅 구현을 firebase -> mysql로 전환</li>
-              </ul>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-print-12">
-                <p>프로젝트 설명</p>
-                <ul>
-                  <li>관리자(웹) - 사용자(android)</li>
-                  <li>
-                    관리자가 방을 개설하여, 실시간으로 홈쇼핑 방송을 시작합니다
-                  </li>
-                  <li>
-                    유저 들은 해당 방송에 참여해서 실시간 채팅 등으로 상품에
-                    대해 물어 볼 수 있습니다
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xs-12 col-print-12">
-              <p class="quote">전기자동차 충전소 앱</p>
-              <ul>
-                <li>
-                  데이터베이스 설계, api 서버 구축 및 admin 웹 프론트 작업
-                </li>
-                <li>
-                  ci-cd 환경을 개선 - 환경파일 및 변수 등을 s3에서 private하게
-                  설정, docker build시 다운받아 컴파일 하는 식으로 보안 강화
-                </li>
-                <li>
-                  공공데이터 포탈에서 제공하는 전기차충전소 위치 및 충전기
-                  정보를 이용하여 분 단위로 실시간 예측 로직에 참여할 수 있도록
-                  cron을 설계
-                </li>
-              </ul>
-              <div class="col-xs-12 col-sm-12 col-md-12 col-print-12">
-                <p>프로젝트 설명</p>
-                <ul>
-                  <li>
-                    관리자(웹) - 충전기사(android, ios) - 사용자(android, ios)
-                  </li>
-                  <!-- <li>관리자는 충전기사를 모집하고 전기차 충전 요청이 들어오면 충전기사와 사용자를 연결합니다</li> -->
-                  <li>
-                    사용자는 본인의 자동차를 등록하고, 근처에 가까운 충전소가
-                    있는지 검색 가능하며, 어떤 충전소에 가야 대기 없이 충전할 수
-                    있는지 예측 정보를 받을 수 있습니다
-                  </li>
-                  <li>
-                    충전소는 본인 들의 충전소 정보 하단에 배너 광고를 게시할 수
-                    있습니다
-                  </li>
-                  <li>
-                    사용자는 구독형식으로 가입하게 되면 월 얼마를 제공하고, 추가
-                    비용 없이 충전이 가능하며, 건별로도 출장 충전을 부를 수
-                    있습니다
-                  </li>
-                  <li>
-                    관리자에서는 공공데이터 포탈에서 전기차충전소 위치 및
-                    충전기데이터를 받아 확인할 수 있고, 충전기사와 사용자를
-                    연결시켜줍니다
-                  </li>
-                  <li>
-                    사용자는 충전 요청 후 요청이 완료되면 푸시 알람을 받고 현재
-                    충전 상태 진행을 확인할 수 있습니다
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-xs-12 col-print-12">
-              <p class="quote">기타 프로젝트</p>
-              <ul>
-                <li>관세사 중개플래폼 앱 - https://www.gtco9932.co.kr</li>
-                <li>헬스장 관리앱</li>
-                <li>방사능 관리앱 리뉴얼 등</li>
-              </ul>
-            </div>
-            <div class="col-xs-12 col-print-12">
-              <p class="quote">사내 활동</p>
-              <ul>
                 <li>사내 관리자 페이지 구축, 필요한 기능 모듈화</li>
                 <li>
                   모든 프로젝트의 gitlab ci-cd를 구축, 테스트코드 작성 및 적용
@@ -560,6 +294,259 @@
           <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
             <ul>
               <li>figma, zeplin, slack, notion, dooray</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="container more-container">
+        <h3>Project</h3>
+        <div class="row clearfix layout layout-top-middle">
+          <div class="col-xs-12 col-print-12 details">
+            <h4>팀에브리웨어 프로젝트</h4>
+          </div>
+        </div>
+        <div class="row clearfix layout layout-left">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            <h4>케이크예약 플래폼</h4>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+            <ul>
+              <li>데이터베이스 스키마 설계, api 서버 구축</li>
+              <li>
+                chromium(Puppeteer)을 이용하여 인스타그램 이미지 크롤링 기능
+                구현
+              </li>
+              <li>
+                chromium(Puppeteer) 이용하여 주문서 base64이미지 만드는 시간을
+                10초에서 1초로 단축
+              </li>
+              <li>
+                firbase의 real time database를 이용하여 React 기반의 실시간 채팅
+                기능을 구현
+              </li>
+              <li>알리고 등을 활용하여 문자 자동알림, 알림톡 등을 구현</li>
+            </ul>
+            <p>프로젝트 설명</p>
+            <ul>
+              <li>관리자(웹) - 사용자(react)</li>
+              <li>서울에 있는 모든 케이크가게를 찾아볼 수 있습니다</li>
+              <li>
+                svg로 서울 지도가 띄워져있고, 클릭하면 특정 구나 동에 있는
+                케이크 가게 리스트 볼 수 있습니다
+              </li>
+              <li>
+                사용자가 클릭한 가게가 제휴된 가게라면 예약 주문을 할 수
+                있습니다
+              </li>
+              <li>
+                예약완료시 주문서를 스크린샷 형태로 제공 받으며, 가게 주인과
+                채팅할 수 있습니다
+              </li>
+              <li>
+                관리자에서는 케이크 가게를 등록하고, 케이크 가게의 메뉴판을
+                작성합니다
+              </li>
+              <li>
+                주기적으로 인스타그램에 올라와 있는 케이크 가게 사진을
+                크롤링합니다
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row clearfix layout layout-left">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            <h4>캠핑장 플래폼</h4>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+            <ul>
+              <li>
+                데이터베이스 스키마 설계, api 서버 구축 및 admin 웹 프론트 작업
+              </li>
+              <li>gitlab ci-cd를 구축</li>
+              <li>사용자 세션 처리를 redis 환경으로 구축</li>
+              <li>결제, 커뮤니티, 예약, 정산 등의 기능 구축</li>
+            </ul>
+            <p>프로젝트 설명</p>
+            <ul>
+              <li>관리자(웹) - 사용자(react)</li>
+              <li>캠핑장 예약, 커뮤니티, 결제 등이 모두 포함되었습니다</li>
+              <li>
+                사용자는 위치 혹은 키워드로 캠핑장 들을 검색할 수 있고, 특정
+                카테고리로 묶인 캠핑장 들을 확인하고 조회할 수 있습니다
+              </li>
+              <li>커뮤니티에 글을 올리고, 리뷰 등을 작성할 수 있습니다</li>
+              <li>
+                관리자는 사업자등록증 등 캠핑장을 증명할 수 있는 문서를 제공하고
+                슈퍼관리자는 이를 승인합니다
+              </li>
+              <li>
+                관리자는 캠핑장을 등록하고, 캠핑장 사이트를 아주 세세하게
+                등록합니다. ex) 예약가능시간, 주중 주말 가격, 성수기 비성수기
+                가격 등등..
+              </li>
+              <li>
+                관리자는 캘린더로 언제부터 언제까지 예약인지 현황을 살펴볼 수
+                있고, 월별로 정산 현황을 확인 할 수 있습니다
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row clearfix layout layout-left">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            <h4>전기자동차 충전소 플래폼</h4>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+            <ul>
+              <li>
+                데이터베이스 스키마 설계, api 서버 구축 및 admin 웹 프론트 작업
+              </li>
+              <li>
+                ci-cd 환경을 개선 - 환경파일 및 변수 등을 s3에서 private하게
+                설정, docker build시 다운받아 컴파일 하는 식으로 보안 강화
+              </li>
+              <li>
+                공공데이터 포탈에서 제공하는 전기차충전소 위치 및 충전기 정보를
+                이용하여 분 단위로 실시간 예측 로직에 참여할 수 있도록 cron을
+                설계
+              </li>
+            </ul>
+            <p>프로젝트 설명</p>
+            <ul>
+              <li>
+                관리자(웹) - 충전기사(android, ios) - 사용자(android, ios)
+              </li>
+              <!-- <li>관리자는 충전기사를 모집하고 전기차 충전 요청이 들어오면 충전기사와 사용자를 연결합니다</li> -->
+              <li>
+                사용자는 본인의 자동차를 등록하고, 근처에 가까운 충전소가 있는지
+                검색 가능하며, 어떤 충전소에 가야 대기 없이 충전할 수 있는지
+                예측 정보를 받을 수 있습니다
+              </li>
+              <li>
+                충전소는 본인 들의 충전소 정보 하단에 배너 광고를 게시할 수
+                있습니다
+              </li>
+              <li>
+                사용자는 구독형식으로 가입하게 되면 월 얼마를 제공하고, 추가
+                비용 없이 충전이 가능하며, 건별로도 출장 충전을 부를 수 있습니다
+              </li>
+              <li>
+                관리자에서는 공공데이터 포탈에서 전기차충전소 위치 및
+                충전기데이터를 받아 확인할 수 있고, 충전기사와 사용자를
+                연결시켜줍니다
+              </li>
+              <li>
+                사용자는 충전 요청 후 요청이 완료되면 푸시 알람을 받고 현재 충전
+                상태 진행을 확인할 수 있습니다
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row clearfix layout layout-left">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            <h4>심리상담 콘텐츠 플래폼</h4>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+            <ul>
+              <li>
+                데이터베이스 스키마 설계, api 서버 구축 및 admin 웹 프론트 작업
+              </li>
+              <li>
+                카카오톡 브라우저에서 ios 유니버셜 링크 기능이 제대로 작동하지
+                않는 것을 nginx proxy에서 mime type 수정 등을 통하여 해결
+              </li>
+              <li>
+                Docker 컨테이너의 로그가 쌓여 서버가 죽는 일이 발생, 컨테이너
+                별로 로그파일 개수 및 파일당 입력되는 로그 사이즈 최적화
+              </li>
+            </ul>
+            <p>프로젝트 설명</p>
+            <ul>
+              <li>관리자(웹) - 사용자(ios)</li>
+              <li>
+                로그인 후 본인의 심리상태 확인을 위한 10~20가지의 설문을
+                받습니다
+              </li>
+              <li>
+                설문의 답변마다 4가지 색깔과 점수로 값을 환산할 수 있고, 어떤
+                색깔 어떤 점수가 더 높냐에 따라 메인에 뜨는 게시물이 다릅니다
+              </li>
+              <li>
+                게시물 들은 앱과 제휴한 정신과 의사 혹은 심리상담가가 올린
+                글입니다
+              </li>
+              <li>내 주변에 있는 가장 가까운 심리상담소를 추천해줍니다</li>
+              <li>관리자에서 이벤트나, 배너, 제휴한 업체의 글을 등록합니다</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row clearfix layout layout-left">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            <h4>학원관리앱</h4>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+            <ul>
+              <li>
+                데이터베이스 스키마 설계, api 서버 구축 및 admin 웹 프론트 작업
+              </li>
+              <li>
+                한글에서 제공하는 api를 이용하여, explorer 환경에서 웹으로 문제
+                답안 양식을 문제집에 맞게 동적으로 만드는 기능 작성
+              </li>
+            </ul>
+            <p>프로젝트 설명</p>
+            <ul>
+              <li>슈퍼관리자(웹) - 학원관리자(웹,앱) - 사용자(안드로이드)</li>
+              <li>
+                슈퍼관리자는 학원관리자 회원가입을 받아 확인하고, 이벤트 및
+                공지사항 등을 푸시알림하고, 학원 별로 쓰이는 양식, 문제집을 직접
+                제공합니다
+              </li>
+              <li>
+                학원 관리자는 원생을 등록시키고, 슈퍼관리자에서 내려주는 교재나
+                문서 양식을 QR코드 형태로 학생들에게 제공합니다
+              </li>
+              <li>
+                문제집을 푼 후 문제집 답안 양식을 카메라로 찍어 제출할 수
+                있습니다
+              </li>
+              <li>
+                입력된 정답을 통해 채점을 하고 지역별, 학교별 등수를 통계로 확인
+                할 수 있습니다.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row clearfix layout layout-left">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            <h4>온누리스토어 리뉴얼</h4>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+            <ul>
+              <li>관리자 페이지 웹 프론트 작업</li>
+              <li>
+                온누리 측 시스템 매니저의 gitlab ci-cd 구현 부분을 참고하여 사내
+                ci-cd를 구축
+              </li>
+              <li>React로 된 프론트페이지 기능 구현 및 서포트</li>
+            </ul>
+            <p>프로젝트 설명</p>
+            <ul>
+              <li>
+                기존 솔루션업체를 통한 페이지를 자사의 페이지로 리뉴얼 합니다
+              </li>
+              <li>위메프의 관리자 페이지를 기준으로 리뉴얼 하였습니다</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row clearfix layout layout-left">
+          <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
+            <h4>기타 프로젝트</h4>
+          </div>
+          <div class="col-xs-12 col-sm-8 col-md-9 col-print-12">
+            <ul>
+              <li>관세사 중개플래폼 앱</li>
+              <li>헬스장 관리앱</li>
+              <li>방사능 관리앱 리뉴얼 등</li>
             </ul>
           </div>
         </div>
